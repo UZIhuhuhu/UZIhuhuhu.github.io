@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            React 16 渲染过程 | 
+        
+        tinyhuang&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?mHsVh0CeP3Ywb70it0b1+g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="tinyhuang&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://example.com/2020/01/20/react-fiber/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="tinyhuang&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://example.com/2020/01/20/react-fiber/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="React 16 渲染过程 | tinyhuang&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Mon Jan 20 2020 00:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jan 19 2022 18:11:02 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://example.com/2020/01/20/react-fiber/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://example.com/2020/01/20/react-fiber/index.html",
+    "headline": "React 16 渲染过程",
+    "datePublished": "Mon Jan 20 2020 00:00:00 GMT+0800",
+    "dateModified": "Wed Jan 19 2022 18:11:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "tinyhuang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "不成熟的社畜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "tinyhuang&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-Fiber"><span class="post-toc-text">为什么需要 Fiber</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Stack-Reconciler"><span class="post-toc-text">Stack Reconciler</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fiber-Reconciler"><span class="post-toc-text">Fiber Reconciler</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fiber-Node-Tree"><span class="post-toc-text">Fiber Node Tree</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#React-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B"><span class="post-toc-text">React 渲染流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Scheduler-%E9%98%B6%E6%AE%B5"><span class="post-toc-text">Scheduler 阶段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ReactDOM-render"><span class="post-toc-text">ReactDOM.render</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#legacyRenderSubtreeIntoContainer"><span class="post-toc-text">legacyRenderSubtreeIntoContainer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#legacyCreateRootFromDOMContainer"><span class="post-toc-text">legacyCreateRootFromDOMContainer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ReactSyncRoot"><span class="post-toc-text">ReactSyncRoot</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#setState"><span class="post-toc-text">setState</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#enqueueUpdate"><span class="post-toc-text">enqueueUpdate</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#scheduleWork"><span class="post-toc-text">scheduleWork</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reconciliation-%E9%98%B6%E6%AE%B5"><span class="post-toc-text">Reconciliation 阶段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#workLoop"><span class="post-toc-text">workLoop</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#performUnitOfWork"><span class="post-toc-text">performUnitOfWork</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#beginWork"><span class="post-toc-text">beginWork</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#completeWork"><span class="post-toc-text">completeWork</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#commit-%E9%98%B6%E6%AE%B5"><span class="post-toc-text">commit 阶段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Effect"><span class="post-toc-text">Effect</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#effects-list"><span class="post-toc-text">effects list</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#diff"><span class="post-toc-text">diff</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#commitRoot"><span class="post-toc-text">commitRoot</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#commitBeforeMutationEffects"><span class="post-toc-text">commitBeforeMutationEffects</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#commitMutationEffects"><span class="post-toc-text">commitMutationEffects</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#commitPlacement-%E2%80%93-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="post-toc-text">commitPlacement – 插入节点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#commitWork-%E2%80%93-%E6%9B%B4%E6%96%B0%E8%8A%82%E7%82%B9"><span class="post-toc-text">commitWork – 更新节点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#commitUpdate"><span class="post-toc-text">commitUpdate</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#commitTextUpdate"><span class="post-toc-text">commitTextUpdate</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#commitDeletion-%E2%80%93-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="post-toc-text">commitDeletion – 删除节点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#commitLayoutEffects"><span class="post-toc-text">commitLayoutEffects</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83"><span class="post-toc-text">参考</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                React 16 渲染过程
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>tinyhuang</strong>
+        <span>Jan 20, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 16 渲染过程&url=http://example.com/2020/01/20/react-fiber/index.html&pic=http://example.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 16 渲染过程&url=http://example.com/2020/01/20/react-fiber/index.html&via=tinyhuang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/01/20/react-fiber/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://example.com/2020/01/20/react-fiber/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>学过微机的同学都应该很熟悉 <strong>「中断」</strong> 这个概念：</p>
+<ul>
+<li>CPU 正常运行程序时，内部事件或外设提出中断请求；</li>
+<li>CPU 予以响应，同时保护好 CPU 执行主程序的现场，转入调用中断服务程序；</li>
+<li>调用完毕后恢复现场。</li>
+</ul>
+<p><strong>本文学习的 React 源码版本：16.9.0</strong></p>
+<h2 id="为什么需要-Fiber"><a href="#为什么需要-Fiber" class="headerlink" title="为什么需要 Fiber"></a>为什么需要 Fiber</h2><h4 id="Stack-Reconciler"><a href="#Stack-Reconciler" class="headerlink" title="Stack Reconciler"></a>Stack Reconciler</h4><p>React 16 之前的组件渲染方式是递归渲染：渲染父节点 -&gt; 渲染子节点</p>
+<p>递归渲染看起来十分简单，但是如果想在子节点的渲染过程中执行优先级更高的操作，只能保留调用栈中子节点的渲染及子节点之前节点的渲染，这样是很复杂的，这种调和/渲染也叫做 Stack Reconciler。</p>
+<h4 id="Fiber-Reconciler"><a href="#Fiber-Reconciler" class="headerlink" title="Fiber Reconciler"></a>Fiber Reconciler</h4><p>Fiber 使用链表的结构去渲染节点，每一个节点都称之为 Fiber Node，每个节点会有三个属性：</p>
+<ul>
+<li>child 指向第一个子节点</li>
+<li>sibling 指向兄弟节点</li>
+<li>return 指向父节点</li>
+</ul>
+<p>Fiber 的渲染方式：从父节点开始，向下依次遍历子节点，深度优先渲染完子节点后，再回到其父节点去检查是否有兄弟节点，如果有兄弟节点，则从该兄弟节点开始继续深度优先的渲染，直到回退到根节点结束。</p>
+<p><strong>重复遍历的节点并不会重复渲染，而是为了取到下一个可能需要渲染的节点。</strong></p>
+<p>此时每一个节点都是一个渲染任务, 从而将整个界面渲染任务拆分成更小的模块，渲染可拆分就意味着每次任务执行前都可以检查是否去执行优先级更高的操作。这个就叫做并行渲染或者时间分片。</p>
+<h2 id="Fiber-Node-Tree"><a href="#Fiber-Node-Tree" class="headerlink" title="Fiber Node Tree"></a>Fiber Node Tree</h2><p>实际的渲染过程是 diff 两棵 Fiber 节点树得到最小变更。在 React16 中，两棵树分别是：</p>
+<ul>
+<li>current tree （在源码中即 <code>HostRoot.current</code>）</li>
+<li>workInProgress tree（在源码中即 <code>HostRoot.current.alternate</code>）</li>
+</ul>
+<p><img src="./1.png"></p>
+<p>不过 React 并没有实现两棵 Fiber Node Tree，实际情况是两棵树上对应的 Fiber Node 通过 <code>alternate</code> 属性互相引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconiler/src/ReactFiber.js</span></span><br><span class="line"><span class="comment">// This is used to create an alternate fiber to do work on.</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createWorkInProgress</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  workInProgress.pendingProps = pendingProps;</span><br><span class="line">  workInProgress.child = current.child;</span><br><span class="line">  workInProgress.sibling = current.sibling;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="React-渲染流程"><a href="#React-渲染流程" class="headerlink" title="React 渲染流程"></a>React 渲染流程</h2><p>可以分为 Scheduler、Reconciliation、Commit 这三个阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[Scheduler] --&gt;B(Reconciliation/Render)</span><br><span class="line">    B --&gt; C(Commit)</span><br><span class="line">    C --&gt; D(Brower Screen)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Scheduler-阶段"><a href="#Scheduler-阶段" class="headerlink" title="Scheduler 阶段"></a>Scheduler 阶段</h2><p>Scheduer 流程主要是创建更新，创建更新的方式：</p>
+<ul>
+<li>ReactDOM.render</li>
+<li>setState</li>
+</ul>
+<p>可以发现 React 将首次渲染和更新渲染统一了起来。</p>
+<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><p>调用 <code>legacyRenderSubtreeIntoContainer</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOM.js</span></span><br><span class="line"><span class="keyword">const</span> ReactDOM = &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> legacyRenderSubtreeIntoContainer(</span><br><span class="line">      <span class="literal">null</span>,</span><br><span class="line">      element,</span><br><span class="line">      container,</span><br><span class="line">      <span class="literal">false</span>,</span><br><span class="line">      callback</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="legacyRenderSubtreeIntoContainer"><a href="#legacyRenderSubtreeIntoContainer" class="headerlink" title="legacyRenderSubtreeIntoContainer"></a>legacyRenderSubtreeIntoContainer</h4><p>调用 root.render，root 来自调用 <code>legacyCreateRootFromDOMContainer</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOM.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">legacyRenderSubtreeIntoContainer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> root: _ReactSyncRoot = (container._reactRootContainer: any);</span><br><span class="line">  <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">    <span class="comment">// Initial mount</span></span><br><span class="line">    root = container._reactRootContainer = legacyCreateRootFromDOMContainer(</span><br><span class="line">      container,</span><br><span class="line">      forceHydrate</span><br><span class="line">    );</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Update</span></span><br><span class="line">    updateContainer(children, fiberRoot, parentComponent, callback);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="legacyCreateRootFromDOMContainer"><a href="#legacyCreateRootFromDOMContainer" class="headerlink" title="legacyCreateRootFromDOMContainer"></a>legacyCreateRootFromDOMContainer</h4><ul>
+<li>清除根节点下的所有子元素</li>
+<li>创建 ReactRoot</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOM.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">legacyCreateRootFromDOMContainer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> shouldHydrate =</span><br><span class="line">    forceHydrate || shouldHydrateDueToLegacyHeuristic(container);</span><br><span class="line">  <span class="keyword">if</span> (!shouldHydrate) &#123;</span><br><span class="line">    <span class="keyword">let</span> rootSibling;</span><br><span class="line">    <span class="keyword">while</span> ((rootSibling = container.lastChild)) &#123;</span><br><span class="line">      container.removeChild(rootSibling);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> ReactSyncRoot(container, LegacyRoot, shouldHydrate);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ReactSyncRoot"><a href="#ReactSyncRoot" class="headerlink" title="ReactSyncRoot"></a>ReactSyncRoot</h4><p>后面就是创建 FiberRoot 了，不放源码上来了。</p>
+<hr>
+<h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[createFiberRoot]</span><br><span class="line">A[setState] --&gt;B(enqueueUpdate)</span><br><span class="line">    B --&gt; |updateQueue| C(scheduleWork)</span><br><span class="line">    C --&gt; D(requestWork)</span><br></pre></td></tr></table></figure>
+
+<h4 id="enqueueUpdate"><a href="#enqueueUpdate" class="headerlink" title="enqueueUpdate"></a>enqueueUpdate</h4><p>将当前的更新压入更新队列</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/src/react-reconciler/src/ReactFiberClassComponent.js</span></span><br><span class="line"><span class="keyword">const</span> updater = &#123;</span><br><span class="line">  <span class="function"><span class="title">enqueueUpdate</span>(<span class="params">inst, payload, callback</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> fiber = getInstance(inst);</span><br><span class="line">    <span class="keyword">const</span> currentTime = requestCurrentTime();</span><br><span class="line">    <span class="keyword">const</span> suspenseConfig = requestCurrentSuspenseConfig();</span><br><span class="line">    <span class="comment">// 到期时间（Fiber 中的优先级）</span></span><br><span class="line">    <span class="keyword">const</span> expirationTime = computeExpirationForFiber(</span><br><span class="line">      currentTime,</span><br><span class="line">      fiber,</span><br><span class="line">      suspenseConfig</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> update = createUpdate(expirationTime, suspenseConfig);</span><br><span class="line"></span><br><span class="line">    update.payload = payload; <span class="comment">// payload 为 setState 中的更新对象</span></span><br><span class="line">    <span class="keyword">if</span> (callback !== <span class="literal">undefined</span> &amp;&amp; callback !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">        warnOnInvalidCallback(callback, <span class="string">&#x27;setState&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      update.callback = callback;</span><br><span class="line">    &#125;</span><br><span class="line">    enqueueUpdate(fiber, update); <span class="comment">// 更新信息放入 updateQueue</span></span><br><span class="line"></span><br><span class="line">    scheduleWork(fiber, expirationTime); <span class="comment">// 并行渲染的核心：Scheduler</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="scheduleWork"><a href="#scheduleWork" class="headerlink" title="scheduleWork"></a>scheduleWork</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberWOrkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scheduleUpdateOnFiber</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ... next</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>scheduler 的具体过程会在之后的并行渲染中展开。</p>
+<hr>
+<h2 id="Reconciliation-阶段"><a href="#Reconciliation-阶段" class="headerlink" title="Reconciliation 阶段"></a>Reconciliation 阶段</h2><h4 id="workLoop"><a href="#workLoop" class="headerlink" title="workLoop"></a>workLoop</h4><p>循环更新，对整棵 Fiber 树都遍历一遍。</p>
+<p>循环每渲染完成一个 Fiber Node 就利用 <code>shouldYield</code> 来判断是否有优先级更高的任务存在，是则跳出循环先执行优先级更高的任务，否则继续渲染下一个 Fiber Node。</p>
+<p>还记得文章一开始介绍了微机中的中断概念么，可以看到在 workLoop 过程中体现出来了。</p>
+<p>简单来说就是判断当前帧是否还有时间更新，如果没有时间更新就将剩余时间去进行其他操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberWorkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderRoot</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isSync) &#123;</span><br><span class="line">          workLoopSync();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          workLoop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">workLoop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (workInProgress !== <span class="literal">null</span> &amp;&amp; !shouldYield()) &#123;</span><br><span class="line">    workInProgress = performUnitOfWork(workInProgress);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="performUnitOfWork"><a href="#performUnitOfWork" class="headerlink" title="performUnitOfWork"></a>performUnitOfWork</h4><p>调用 <code>beginWork</code> 更新当前任务节点，如果 Fiber 树已经更新到叶子节点，则调用 <code>completeUnitOfWork</code> 更新。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberWorkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">performUnitOfWork</span>(<span class="params">unitOfWork: Fiber</span>): <span class="title">Fiber</span> | <span class="title">null</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 调和阶段都是在 alternate 上完成</span></span><br><span class="line">  <span class="keyword">const</span> current = unitOfWork.alternate;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  next = beginWork(current, unitOfWork, renderExpirationTime);</span><br><span class="line"></span><br><span class="line">  unitOfWork.memoizedProps = unitOfWork.pendingProps;</span><br><span class="line">  <span class="comment">// Fiber 树已经更新到叶子节点</span></span><br><span class="line">  <span class="keyword">if</span> (next === <span class="literal">null</span>) &#123;</span><br><span class="line">    next = completeUnitOfWork(unitOfWork);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="beginWork"><a href="#beginWork" class="headerlink" title="beginWork"></a>beginWork</h4><p>根据 <code>workInProgress</code> 的 <code>tag</code> ，把对应的 FiberNode 上下文压入栈，然后更新节点，对应 render 阶段。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberBeginWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">beginWork</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">switch</span> (workInProgress.tag) &#123;</span><br><span class="line">    <span class="keyword">case</span> ClassComponent: &#123;</span><br><span class="line">      <span class="keyword">const</span> Component = workInProgress.type;</span><br><span class="line">      <span class="keyword">if</span> (isLegacyContextProvider(Component)) &#123;</span><br><span class="line">        pushLegacyContextProvider(workInProgress); <span class="comment">// 入栈</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>beginWork 会返回当前节点的子节点，如果有子节点，继续 workLoop；如果没有子节点，进入 completeUnitOfWork</p>
+<p>子节点的 alternate 改变是在 <code>cloneChildFibers</code> 函数中</p>
+<h4 id="completeWork"><a href="#completeWork" class="headerlink" title="completeWork"></a>completeWork</h4><p>改变 effectList（firstEffect、lastEffect、nextEffect）</p>
+<p>作用是将 Fiber Node 上下文出栈，对应 commit 阶段</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/ReactFiberCompleteWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">completeWork</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> newProps = workInProgress.pendingProps;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (workInProgress.tag) &#123;</span><br><span class="line">    <span class="keyword">case</span> ClassComponent: &#123;</span><br><span class="line">      <span class="keyword">const</span> Component = workInProgress.type;</span><br><span class="line">      <span class="keyword">if</span> (isLegacyContextProvider(Component)) &#123;</span><br><span class="line">        popLegacyContext(workInProgress); <span class="comment">// 出栈</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="commit-阶段"><a href="#commit-阶段" class="headerlink" title="commit 阶段"></a>commit 阶段</h2><p>从字面意思来就可以知道， commit 阶段是将调和阶段的更新进行提交，即把更新操作反映到真实的 DOM 上。</p>
+<p>同时，commit 阶段是同步执行，不可被中断。</p>
+<h3 id="Effect"><a href="#Effect" class="headerlink" title="Effect"></a>Effect</h3><p>函数式编程中经常会看见 Effect 这个概念，表示副作用。在 Fiber 架构中，Effect 定义了 Fiber Node 在 commit 阶段要做的事情，在源码中也就是 <code>EffectTag</code> 这个属性。</p>
+<ul>
+<li>对于组件：更新 refs、调用 componentDidUpdate…</li>
+<li>对于 DOM：增加、更新、删除 DOM…</li>
+</ul>
+<h4 id="effects-list"><a href="#effects-list" class="headerlink" title="effects list"></a>effects list</h4><p>Effect 组成的链表成为 effects list</p>
+<ul>
+<li>firstEffect：指向第一个更新的节点</li>
+<li>nextEffect：指向下一个更新的节点</li>
+</ul>
+<p>effects list 是用来进行最后的真实 DOM 更新的，这不难让人想到 diff 算法，实际上 effects list 正是 diff 得到的结果。</p>
+<h4 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactChildFiber.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reconcileChildFibers</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="commitRoot"><a href="#commitRoot" class="headerlink" title="commitRoot"></a>commitRoot</h3><p>使 effects list 生效：</p>
+<ul>
+<li>第一次遍历 effects list（commitBeforeMutationEffects）：在更改前读取 DOM 上的 state，这里是 getSnapshotBeforeUpdate 生命周期调用的地方；</li>
+<li>第二次遍历 effects list（commitMutationEffects）：此阶段是真正更改 DOM 的阶段；</li>
+<li>第三次遍历 effects list（commitLayoutEffects）：执行生命周期函数 componentDidMount、componentDidUpdate…</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberWorkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitRootImpl</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// 三次遍历 effects list</span></span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    commitBeforeMutationEffects();</span><br><span class="line">  &#125; <span class="keyword">while</span> (nextEffect !== <span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    commitMutationEffects(renderPriorityLevel);</span><br><span class="line">  &#125; <span class="keyword">while</span> (nextEffect !== <span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    commitLayoutEffects(root, expirationTime);</span><br><span class="line">  &#125; <span class="keyword">while</span> (nextEffect !== <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="commitBeforeMutationEffects"><a href="#commitBeforeMutationEffects" class="headerlink" title="commitBeforeMutationEffects"></a>commitBeforeMutationEffects</h3><ul>
+<li>通过 prevProps、prevState 以获取 <code>Snapshot</code>；</li>
+<li>调用组件实例的 <code>getSnapshotBeforeUpdate</code>，返回值用于 <code>componentDidUpdate</code> 的第三个参数。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberCommitWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitBeforeMutationLifeCycles</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">switch</span> (finishedWork.tag) &#123;</span><br><span class="line">    <span class="keyword">case</span> ClassComponent: &#123;</span><br><span class="line">      <span class="keyword">if</span> (current !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// pervProps、pervState</span></span><br><span class="line">        <span class="keyword">const</span> prevProps = current.memoizedProps;</span><br><span class="line">        <span class="keyword">const</span> prevState = current.memoizedState;</span><br><span class="line">        startPhaseTimer(finishedWork, <span class="string">&#x27;getSnapshotBeforeUpdate&#x27;</span>);</span><br><span class="line">        <span class="comment">// getSnapshotBeforeUpdate</span></span><br><span class="line">        <span class="keyword">const</span> snapshot = instance.getSnapshotBeforeUpdate(</span><br><span class="line">          finishedWork.elementType === finishedWork.type</span><br><span class="line">            ? prevProps</span><br><span class="line">            : resolveDefaultProps(finishedWork.type, prevProps),</span><br><span class="line">          prevState</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="commitMutationEffects"><a href="#commitMutationEffects" class="headerlink" title="commitMutationEffects"></a>commitMutationEffects</h3><p>根据不同的 effectTag 执行不同的操作：</p>
+<ul>
+<li>插入节点：commitPlacement</li>
+<li>更新节点：commitWork</li>
+<li>删除节点：commitDeletion</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberWorkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitMutationEffects</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">switch</span> (primaryEffectTag) &#123;</span><br><span class="line">    <span class="keyword">case</span> Placement: &#123;</span><br><span class="line">      commitPlacement(nextEffect);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> PlacementAndUpdate: &#123;</span><br><span class="line">      commitPlacement(nextEffect);</span><br><span class="line">      <span class="comment">// Update</span></span><br><span class="line">      <span class="keyword">const</span> current = nextEffect.alternate;</span><br><span class="line">      commitWork(current, nextEffect);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> Update: &#123;</span><br><span class="line">      <span class="keyword">const</span> current = nextEffect.alternate;</span><br><span class="line">      commitWork(current, nextEffect);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> Deletion: &#123;</span><br><span class="line">      commitDeletion(nextEffect, renderPriorityLevel);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="commitPlacement-–-插入节点"><a href="#commitPlacement-–-插入节点" class="headerlink" title="commitPlacement – 插入节点"></a>commitPlacement – 插入节点</h4><ul>
+<li>找到 finishedWork 的父节点 parentFiber。寻找的是原生的 DOM 节点对应的 Fiber Node，如果父级不是原生 DOM，则继续往上寻找。</li>
+<li>找到待插入节点的后一个节点</li>
+<li>使用 insertBefore 或 appendChild 或深度优先遍历 class 组件的子节点插入</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberCommitWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitPlacement</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 递归插入所有节点到父节点</span></span><br><span class="line">  <span class="keyword">const</span> parentFiber = getHostParentFiber(finishedWork);</span><br><span class="line">  <span class="comment">// 找待插入节点的后一个节点</span></span><br><span class="line">  <span class="keyword">const</span> before = getHostSibling(finishedWork);</span><br><span class="line"></span><br><span class="line">  insertBefore(parent, stateNode, before);</span><br><span class="line">  <span class="comment">// or...</span></span><br><span class="line">  appendChild(parent, stateNode);</span><br><span class="line">  <span class="comment">// or...</span></span><br><span class="line">  <span class="keyword">while</span> (node.sibling === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (node.return === <span class="literal">null</span> || node.return === finishedWork) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    node = node.return;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="commitWork-–-更新节点"><a href="#commitWork-–-更新节点" class="headerlink" title="commitWork – 更新节点"></a>commitWork – 更新节点</h4><p>commitWork 只会对 HostComponent 和 HostText 进行更新，也就是 DOM 节点和文本节点。</p>
+<ul>
+<li>HostComponent 调用 commitUpdate</li>
+<li>HostText 调用 commitTextUpdate</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberCommitWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitWork</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (finishedWork.tag) &#123;</span><br><span class="line">    <span class="keyword">case</span> HostComponent: &#123;</span><br><span class="line">      commitUpdate(</span><br><span class="line">        instance,</span><br><span class="line">        updatePayload,</span><br><span class="line">        type,</span><br><span class="line">        oldProps,</span><br><span class="line">        newProps,</span><br><span class="line">        finishedWork</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> HostText: &#123;</span><br><span class="line">      commitTextUpdate(textInstance, oldText, newText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="commitUpdate"><a href="#commitUpdate" class="headerlink" title="commitUpdate"></a>commitUpdate</h4><p>updatePayload 应用到真实 DOM 上；对一些属性做特殊处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOMHostConfig.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitUpdate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  updateFiberProps(domElement, newProps);</span><br><span class="line"></span><br><span class="line">  updateProperties(domElement, updatePayload, type, oldProps, newProps);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOMComponent.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateDOMProperties</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">  domElement: Element,</span></span></span><br><span class="line"><span class="params"><span class="function">  updatePayload: <span class="built_in">Array</span>&lt;any&gt;,</span></span></span><br><span class="line"><span class="params"><span class="function">  wasCustomComponentTag: boolean,</span></span></span><br><span class="line"><span class="params"><span class="function">  isCustomComponentTag: boolean</span></span></span><br><span class="line"><span class="params"><span class="function"></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; updatePayload.length; i += <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> propKey = updatePayload[i];</span><br><span class="line">    <span class="keyword">const</span> propValue = updatePayload[i + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> (propKey === STYLE) &#123;</span><br><span class="line">      setValueForStyles(domElement, propValue);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (propKey === DANGEROUSLY_SET_INNER_HTML) &#123;</span><br><span class="line">      setInnerHTML(domElement, propValue);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (propKey === CHILDREN) &#123;</span><br><span class="line">      setTextContent(domElement, propValue);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      setValueForProperty(domElement, propKey, propValue, isCustomComponentTag);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="commitTextUpdate"><a href="#commitTextUpdate" class="headerlink" title="commitTextUpdate"></a>commitTextUpdate</h4><p>文本更新很简单，直接替换 value</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-dom/src/client/ReactDOMHostConfig.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitTextUpdate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  textInstance.nodeValue = newText;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="commitDeletion-–-删除节点"><a href="#commitDeletion-–-删除节点" class="headerlink" title="commitDeletion – 删除节点"></a>commitDeletion – 删除节点</h4><p>删除节点也需要考虑到子节点不一定是原生 DOM 的情况，比如如果是 class Component，需要调用 <code>componentWillUnmount</code>，所以还是需要深度遍历整个子树</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberCommitWork.js</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitDeletion</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">  current: Fiber,</span></span></span><br><span class="line"><span class="params"><span class="function">  renderPriorityLevel: ReactPriorityLevel</span></span></span><br><span class="line"><span class="params"><span class="function"></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (supportsMutation) &#123;</span><br><span class="line">    unmountHostComponents(current, renderPriorityLevel);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Detach refs and call componentWillUnmount() on the whole subtree.</span></span><br><span class="line">    commitNestedUnmounts(current, renderPriorityLevel);</span><br><span class="line">  &#125;</span><br><span class="line">  detachFiber(current);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="commitLayoutEffects"><a href="#commitLayoutEffects" class="headerlink" title="commitLayoutEffects"></a>commitLayoutEffects</h3><ul>
+<li>执行 <code>componentDidMount</code>、<code>componentDidUpdate</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packges/react-reconciler/src/ReactFiberWorkLoop.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitLayoutEffects</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (nextEffect !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (effectTag &amp; (Update | Callback)) &#123;</span><br><span class="line">      recordEffect();</span><br><span class="line">      <span class="keyword">const</span> current = nextEffect.alternate;</span><br><span class="line">      commitLifeCycles(root, current, nextEffect, committedExpirationTime);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// packages/react-reconciler/src/ReactFiberCommitWork.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commitLifeCycles</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (finishedWork.tag) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">case</span> ClassComponent: &#123;</span><br><span class="line">      <span class="keyword">const</span> instance = finishedWork.stateNode;</span><br><span class="line">      <span class="keyword">if</span> (finishedWork.effectTag &amp; Update) &#123;</span><br><span class="line">        <span class="keyword">if</span> (current === <span class="literal">null</span>) &#123;</span><br><span class="line">          startPhaseTimer(finishedWork, <span class="string">&#x27;componentDidMount&#x27;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> prevProps =</span><br><span class="line">            finishedWork.elementType === finishedWork.type</span><br><span class="line">              ? current.memoizedProps</span><br><span class="line">              : resolveDefaultProps(finishedWork.type, current.memoizedProps);</span><br><span class="line">          <span class="keyword">const</span> prevState = current.memoizedState;</span><br><span class="line">          startPhaseTimer(finishedWork, <span class="string">&#x27;componentDidUpdate&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74344654">探究 React Work Loop 原理</a></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '9d11af6e994f0b0d597e',
+            clientSecret: '530b3741896fee58dda1b816681d944c8aa3500f',
+            repo: 'UZIhuhuhu.github.io',
+            owner: 'UZIhuhuhu',
+            admin: ['UZIhuhuhu'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/02/03/a.b.c.d/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/08/21/react-hooks/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="tinyhuang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        wynnxin@qingyou.ren
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+  
+  <!-- Paradox Footer Left Section -->
+  <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/UZIhuhuhu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+  <!--Copyright-->
+  <div id="copyright">
+    Copyright&nbsp;©&nbsp;<span year></span>&nbsp;tinyhuang's Blog 
+  </div>
+
+  <!-- Paradox Footer Right Section -->
+
+  <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+  <div class="mdl-mini-footer--right-section">
+    <div>
+      <!-- <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div> -->
+      <!-- <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div> -->
+    </div>
+  </div>
+  
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?XoyRIDdKOG3o0iE537swBg==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

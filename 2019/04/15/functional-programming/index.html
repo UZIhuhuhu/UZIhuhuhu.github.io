@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            函数式编程的一些思考 | 
+        
+        tinyhuang&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?mHsVh0CeP3Ywb70it0b1+g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="tinyhuang&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://example.com/2019/04/15/functional-programming/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="tinyhuang&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://example.com/2019/04/15/functional-programming/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="函数式编程的一些思考 | tinyhuang&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Mon Apr 15 2019 00:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jan 19 2022 17:57:01 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://example.com/2019/04/15/functional-programming/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://example.com/2019/04/15/functional-programming/index.html",
+    "headline": "函数式编程的一些思考",
+    "datePublished": "Mon Apr 15 2019 00:00:00 GMT+0800",
+    "dateModified": "Wed Jan 19 2022 17:57:01 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "tinyhuang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "不成熟的社畜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "tinyhuang&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AD%A3%E6%96%87%E5%BC%80%E5%A7%8B"><span class="post-toc-text">正文开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#JavaScript-%E7%AE%97%E4%B8%8D%E7%AE%97-FP-%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="post-toc-text">JavaScript 算不算 FP 语言？</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E4%B8%80%E7%AD%89%E5%85%AC%E6%B0%91"><span class="post-toc-text">函数作为一等公民</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%8E%E5%91%BD%E4%BB%A4%E5%BC%8F%E5%92%8C%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%E5%BC%80%E5%A7%8B"><span class="post-toc-text">从命令式和声明式的区别开始</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%AF%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="post-toc-text">纯函数的作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="post-toc-text">辅助函数的工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96"><span class="post-toc-text">函数柯里化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E2%80%9C%E5%AE%89%E5%85%A8%E2%80%9D%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="post-toc-text">“安全”的操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88"><span class="post-toc-text">函数组合</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84-Functor"><span class="post-toc-text">更强大的 Functor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%88%91%E4%BB%AC%E4%BB%8E-Promise-%E6%9D%A5%E8%AE%B2-Monad-%E6%98%AF%E4%B8%AA%E5%95%A5"><span class="post-toc-text">我们从 Promise 来讲 Monad 是个啥</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%89%80%E4%BB%A5-Monad-%E6%98%AF%E4%B8%AA%E5%95%A5"><span class="post-toc-text">所以 Monad 是个啥</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="post-toc-text">总结一下</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E5%9C%A8-JavaScript-%E5%89%8D%E7%AB%AF-%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5"><span class="post-toc-text">函数式在 JavaScript(前端) 中的实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-%E4%B8%AD%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F"><span class="post-toc-text">React 中涉及到的函数式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F"><span class="post-toc-text">渲染模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Components-as-functions"><span class="post-toc-text">Components as functions</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Props-%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98"><span class="post-toc-text">Props 的不可变</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Redux-%E4%BC%98%E9%9B%85%E7%9A%84%E4%BF%AE%E6%94%B9%E5%85%B1%E4%BA%AB%E7%8A%B6%E6%80%81"><span class="post-toc-text">Redux 优雅的修改共享状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6"><span class="post-toc-text">高阶组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%BC%8F%EF%BC%88"><span class="post-toc-text">合理使用函数式（</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Redux-%E7%9A%84-Store-%E7%AE%A1%E7%90%86%E9%80%89%E6%8B%A9"><span class="post-toc-text">Redux 的 Store 管理选择</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-text">总结</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                函数式编程的一些思考
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>tinyhuang</strong>
+        <span>Apr 15, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=函数式编程的一些思考&url=http://example.com/2019/04/15/functional-programming/index.html&pic=http://example.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=函数式编程的一些思考&url=http://example.com/2019/04/15/functional-programming/index.html&via=tinyhuang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2019/04/15/functional-programming/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://example.com/2019/04/15/functional-programming/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>函数式编程关心数据的映射，命令式编程关心解决问题的步骤 – nameoverflow</p>
+</blockquote>
+<p>这里的映射就是数学上「函数」的概念——一种东西和另一种东西之间的对应关系。</p>
+<p>这也是为什么「函数式编程」叫做「函数」式编程</p>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h4 id="JavaScript-算不算-FP-语言？"><a href="#JavaScript-算不算-FP-语言？" class="headerlink" title="JavaScript 算不算 FP 语言？"></a>JavaScript 算不算 FP 语言？</h4><p>JavaScript 因为有一等函数这张门票，大部分时候可以算 FP 语言。除了类型系统上由于 JavaScript 是动态类型语言，不容易模拟类型系统之外，大部分函数式特性都可以在 JS 里比较自然地实现。</p>
+<hr>
+<h3 id="函数作为一等公民"><a href="#函数作为一等公民" class="headerlink" title="函数作为一等公民"></a>函数作为一等公民</h3><p>用函数作为主要载体的编程模式，用函数拆解，抽象一般的表达式。</p>
+<h4 id="从命令式和声明式的区别开始"><a href="#从命令式和声明式的区别开始" class="headerlink" title="从命令式和声明式的区别开始"></a>从命令式和声明式的区别开始</h4><p><strong>题外话：关于 const:</strong></p>
+<p>常量不是对这个值本身的限制，而是对赋值的那个变量的限制。换句话说，这个值并没有因为 <code>const</code> 不可变，只是赋值本身不可变。比如值是个复杂值，内容仍然可以修改。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a = [...a, <span class="number">4</span>]; <span class="comment">// TypeError: Assignment to constant variable.</span></span><br><span class="line">a.push(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<p>命令式：编写一条条命令去让计算机执行这些动作</p>
+<p>声明式：我们写一写表达式，而不是一步步的具体指示</p>
+<p>除了函数，递归其实是一个描述表达式的很好的方法。</p>
+<p>好！我们以 SICP 上的一些 🌰 来看</p>
+<p><a target="_blank" rel="noopener" href="http://zaiyewujiang.cn/2019/04/15/sicp-1/">推荐去看看 SICP</a></p>
+<p>看完这边，然后再看看递归在前端中的应用,其实场景还挺少的鹅。</p>
+<p>说了这么多函数是第一公民，声明式，我们来看看函数到底有什么值得我们去用的地方。</p>
+<p><strong>关于尾递归优化</strong></p>
+<blockquote>
+<p>函数调用会在内存形成一个”调用记录”，又称”调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数 A 的内部调用函数 B，那么在 A 的调用记录上方，还会形成一个 B 的调用记录。等到 B 运行结束，将结果返回到 A，B 的调用记录才会消失。如果函数 B 内部还调用函数 C，那就还有一个 C 的调用记录栈，以此类推。所有的调用记录，就形成一个”调用栈”（call stack）。</p>
+</blockquote>
+<p>递归非常耗费内存，因为需要同时保存成千上百个调用记录，很容易发生栈溢出</p>
+<p>一个阶乘函数，计算 n 的阶乘，最多需要保存 n 个调用记录</p>
+<p>我们如果用尾递归的形式，那只要保存 1 个调用记录</p>
+<hr>
+<h2 id="纯函数的作用"><a href="#纯函数的作用" class="headerlink" title="纯函数的作用"></a>纯函数的作用</h2><p>“纯”: 相同的输入只能得到相同的输出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xs = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">xs.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [1,2,3]</span></span><br><span class="line">xs.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [1,2,3]</span></span><br><span class="line">xs.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [1,2,3]</span></span><br><span class="line"></span><br><span class="line">xs.splice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [1,2,3]</span></span><br><span class="line">xs.splice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// [4,5]</span></span><br><span class="line">xs.splice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="辅助函数的工具"><a href="#辅助函数的工具" class="headerlink" title="辅助函数的工具"></a>辅助函数的工具</h3><h4 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h4><p>一个接受 任意多个参数 的函数，如果执行的时候传入的参数不足，那么它会返回新的函数，新的函数会接受剩余的参数，直到所有参数都传入才执行操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> f = <span class="function">(<span class="params">a,b,c,d</span>) =&gt;</span> &#123;...&#125;</span><br><span class="line"><span class="keyword">const</span> curried = curry(f);</span><br><span class="line"></span><br><span class="line">curried(a, b, c, d)</span><br><span class="line">curried(a, b, c)(d)</span><br><span class="line">curried(a)(b, c, d)</span><br><span class="line">curried(a, b)(c, d)</span><br><span class="line">curried(a)(b, c)(d)</span><br><span class="line">curried(a)(b)(c, d)</span><br><span class="line">curried(a, b)(c)(d)</span><br></pre></td></tr></table></figure>
+
+<h4 id="“安全”的操作"><a href="#“安全”的操作" class="headerlink" title="“安全”的操作"></a>“安全”的操作</h4><p>下面这种写法不能保证所有的 <code>remove</code> 都是正确执行的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> append = <span class="function"><span class="keyword">function</span>(<span class="params">parent, child</span>) </span>&#123;</span><br><span class="line">  parent.appendChild(child);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> remove = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>) </span>&#123;</span><br><span class="line">  dom.remove();</span><br><span class="line">&#125;;</span><br><span class="line">append(parent, child); <span class="comment">//插入</span></span><br><span class="line">remove(child); <span class="comment">//删除</span></span><br></pre></td></tr></table></figure>
+
+<p>再来看看下面这种写法，想要删除的节点都是来自删除添加的节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> append = <span class="function"><span class="keyword">function</span>(<span class="params">parent, child</span>) </span>&#123;</span><br><span class="line">  parent.appendChild(child);</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    child.remove();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// point free</span></span><br><span class="line"><span class="keyword">const</span> append2 = <span class="function"><span class="keyword">function</span>(<span class="params">parent, child</span>) </span>&#123;</span><br><span class="line">  parent.appendChild(child);</span><br><span class="line">  <span class="keyword">return</span> child.remove.bind(child);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> remove = append(parent, child); <span class="comment">// 插入一个节点，同时返回所插入的节点的删除操作</span></span><br><span class="line">remove(); <span class="comment">// 删除</span></span><br></pre></td></tr></table></figure>
+
+<p>简单的来总结一下，以函数作为主体，确保了函数之间不会相互干扰</p>
+<hr>
+<h4 id="函数组合"><a href="#函数组合" class="headerlink" title="函数组合"></a>函数组合</h4><p>组合嘛，顾名思义，就是把几样东西给组合起来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> toUpperCase = <span class="function"><span class="params">x</span> =&gt;</span> x.toUpperCase();</span><br><span class="line"><span class="keyword">const</span> exclaim = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="string">&#x27;!&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> shout = compose(toUpperCase, exclaim);</span><br><span class="line">shout(<span class="string">&#x27;hello, green pomelo&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>有个有趣的点就是这是和数学上的结合律很相似</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compose(toUpperCase, compose(head, reverse))</span><br><span class="line">&lt;-&gt;</span><br><span class="line">compose(compose(toUpperCase, head), reverse)</span><br></pre></td></tr></table></figure>
+
+<p>这边具体的在 <code>/src/test/compose.test.js</code> 里有案例</p>
+<hr>
+<h4 id="更强大的-Functor"><a href="#更强大的-Functor" class="headerlink" title="更强大的 Functor"></a>更强大的 Functor</h4><h4 id="我们从-Promise-来讲-Monad-是个啥"><a href="#我们从-Promise-来讲-Monad-是个啥" class="headerlink" title="我们从 Promise 来讲 Monad 是个啥"></a>我们从 Promise 来讲 Monad 是个啥</h4><p><strong>Promise is Monad</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getB = <span class="function"><span class="params">a</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> fetch(a, resolve));</span><br><span class="line"><span class="keyword">const</span> getC = <span class="function"><span class="params">b</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> fetch(b, resolve));</span><br><span class="line"><span class="keyword">const</span> getD = <span class="function"><span class="params">c</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> fetch(c, resolve));</span><br><span class="line"></span><br><span class="line">getB(a)</span><br><span class="line">  .then(getC)</span><br><span class="line">  .then(getD)</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<h4 id="所以-Monad-是个啥"><a href="#所以-Monad-是个啥" class="headerlink" title="所以 Monad 是个啥"></a>所以 Monad 是个啥</h4><p>我们可以实现一个简单的对象 P,然后将 A B 分开来传入这个对象 P,从而可以把回调拆分开</p>
+<p>A(B) =&gt; P(A).then(B)</p>
+<p>经过包装后，P 已经有 Promise 的雏形了</p>
+<p>但是它还没有这样的能力</p>
+<p>P(A).then(B).then(C).then(D)</p>
+<p>那么 Monad 就是一个增强的对象 P，支持链式调用</p>
+<p>在每次 Resolve 一个 Promise 时，我们需要判断两种情况：</p>
+<ul>
+<li><p>如果被 Resolve 的内容仍然是 Promise（即所谓的 <code>thenable</code>），那么<strong>递归 Resolve</strong> 这个 Promise。</p>
+</li>
+<li><p>如果被 Resolve 的内容不是 Promise，那么根据内容的具体情况（如对象、函数、基本类型等），去 <code>fulfill</code> 或 <code>reject</code> 当前 Promise。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>).then(<span class="built_in">console</span>.log);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="built_in">Promise</span>.resolve(<span class="built_in">Promise</span>.resolve(<span class="built_in">Promise</span>.resolve(<span class="number">1</span>)))).then(</span><br><span class="line">  <span class="built_in">console</span>.log</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>这也就是披着 Promise 外衣的 Monad 的核心功能：</p>
+<p>对于一个 P 这样装着某种内容的容器，我们能够递归地把容器一层层拆开，直接取出最里面装着的值。（就像洋葱一样）<br>之后我们就可以实现了<strong>链式调用</strong>的能力</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>(A)</span><br><span class="line">  .then(B)</span><br><span class="line">  .then(C)</span><br><span class="line">  .then(D);</span><br></pre></td></tr></table></figure>
+
+<p>额外的好处是不管同步还是异步，都是一致处理，最后的结果也会是相同的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">  .then(add)</span><br><span class="line">  .then(add)</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> add = <span class="function"><span class="params">x</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> resolve(x + <span class="number">1</span>), <span class="number">1000</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">  .then(add)</span><br><span class="line">  .then(add)</span><br><span class="line">  .then(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>最简单的 <code>P(A).then(B)</code> 实现里，它的 <code>P(A)</code> 相当于 Monad 中的 <code>unit</code> 接口，能够把任意值包装到 Monad 容器里。</p>
+</li>
+<li><p>支持嵌套的 Promise 实现中，它的 then 背后其实是 FP 中的 <code>join</code> 概念，在容器里还装着容器的时候，递归地把内层容器拆开，返回最底层装着的值。</p>
+</li>
+<li><p>Promise 的链式调用背后，其实是 Monad 中的 <code>bind</code> 概念。你可以扁平地串联一堆 <code>.then()</code>，往里传入各种函数，Promise 能够帮你抹平同步和异步的差异，把这些函数逐个应用到容器里的值上。</p>
+</li>
+</ul>
+<p>说到这里，Monad 就是：</p>
+<ul>
+<li><p>可以把值包装为<strong>容器</strong></p>
+</li>
+<li><p>对于容器中的值，可以把函数应用在值上面（包括容器中嵌套容器，需要递归将函数应用到值上）</p>
+</li>
+</ul>
+<h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><p>Promise 消除回调地狱的关键（为什么可以和 Monad 联系起来）</p>
+<ul>
+<li><p>拆分 <code>A(B)</code> 为 <code>P(A).then(B)</code> 的形式。这其实是 Monad 来构建容器的 <code>unit</code></p>
+</li>
+<li><p>不分同步还是异步，都能写 <code>P(A).then(B).then(C)</code> 的形式，这是 Monad 的 <code>bind</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="函数式在-JavaScript-前端-中的实践"><a href="#函数式在-JavaScript-前端-中的实践" class="headerlink" title="函数式在 JavaScript(前端) 中的实践"></a>函数式在 JavaScript(前端) 中的实践</h2><h3 id="React-中涉及到的函数式"><a href="#React-中涉及到的函数式" class="headerlink" title="React 中涉及到的函数式"></a>React 中涉及到的函数式</h3><h4 id="渲染模式"><a href="#渲染模式" class="headerlink" title="渲染模式"></a>渲染模式</h4><p>UI = View(State)</p>
+<h4 id="Components-as-functions"><a href="#Components-as-functions" class="headerlink" title="Components as functions"></a>Components as functions</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Hello = <span class="function"><span class="params">props</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;props.name&#125;!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Props-的不可变"><a href="#Props-的不可变" class="headerlink" title="Props 的不可变"></a>Props 的不可变</h4><hr>
+<h4 id="Redux-优雅的修改共享状态"><a href="#Redux-优雅的修改共享状态" class="headerlink" title="Redux 优雅的修改共享状态"></a>Redux 优雅的修改共享状态</h4><p>(state, action) =&gt; state</p>
+<p>前端组件中的共享状态</p>
+<p>A 状态会被 B,C 组件<strong>影响</strong>或者<strong>依赖</strong></p>
+<p>或者更多的，D E F G 函数用到这个状态，H I J K L 组件会影响这个状态</p>
+<p><img src="./react-1.png"></p>
+<p><img src="./react-2.png"></p>
+<hr>
+<h4 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (WrappedComponent, name) =&gt; &#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="built_in">super</span>();</span><br><span class="line">      <span class="built_in">this</span>.state = &#123; <span class="attr">data</span>: <span class="literal">null</span> &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">componentWillMount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> data = <span class="built_in">localStorage</span>.getItem(name);</span><br><span class="line">      <span class="built_in">this</span>.setState(&#123; data &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">data</span>=<span class="string">&#123;this.state.data&#125;</span> /&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> NewComponent;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>下面就是组件在具体页面中的使用了</strong></p>
+<p>这些组件的共同特点就是从一段请求中拿到数据放到组件中，那这段逻辑就是相同的，我们抽离出来放到高阶组件中去。<strong>高阶组件内部的包装组件和被包装组件之间通过 <code>props</code> 传递数据。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wrapWithLoadData <span class="keyword">from</span> <span class="string">&#x27;./wrapWithLoadData&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputWithUserName</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;this.props.data&#125;</span> /&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">InputWithUserName = wrapWithLoadData(InputWithUserName, <span class="string">&#x27;username&#x27;</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> InputWithUserName;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wrapWithLoadData <span class="keyword">from</span> <span class="string">&#x27;./wrapWithLoadData&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextareaWithContent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">value</span>=<span class="string">&#123;this.props.data&#125;</span> /&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TextareaWithContent = wrapWithLoadData(TextareaWithContent, <span class="string">&#x27;content&#x27;</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TextareaWithContent;</span><br></pre></td></tr></table></figure>
+
+<p><strong>高阶组件的灵活性</strong></p>
+<p>比如我们现在的需求改成从 <code>localStorage</code> 中拿到某个数据，注入组件中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (WrappedComponent, name) =&gt; &#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="built_in">super</span>();</span><br><span class="line">      <span class="built_in">this</span>.state = &#123; <span class="attr">data</span>: <span class="literal">null</span> &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">componentWillMount</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      ajax.get(<span class="string">&#x27;/data/&#x27;</span> + name, <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.setState(&#123; data &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">data</span>=<span class="string">&#123;this.state.data&#125;</span> /&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> NewComponent;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>我们甚至可以写个更高阶的</p>
+<p><img src="./react-3.png"></p>
+<hr>
+<h3 id="合理使用函数式（"><a href="#合理使用函数式（" class="headerlink" title="合理使用函数式（"></a>合理使用函数式（</h3><h4 id="Redux-的-Store-管理选择"><a href="#Redux-的-Store-管理选择" class="headerlink" title="Redux 的 Store 管理选择"></a>Redux 的 Store 管理选择</h4><ul>
+<li>某个状态只被 1 个组件依赖影响</li>
+</ul>
+<p>那这个状态放在组件里的 <code>state</code> 是完全没问题的，没有其他组件可以访问到它</p>
+<ul>
+<li>某个状态被多个组件依赖影响</li>
+</ul>
+<p>🌰：Button =&gt; HTTP =&gt; Loading Model (Loading State)</p>
+<p>那这个 <code>Loading State</code> 的状态是放在 <code>&lt;Button /&gt;</code> 组件里还是放在 <code>&lt;Loading /&gt;</code> 组件里呢？</p>
+<p>其实都不合适，必然会导致另一个组件的依赖。解决方法是把这种状态<strong>抽离出来作为公共部分</strong></p>
+<p>这才是 Redux 这类状态管理解决的问题：管理多个组件所依赖或者影响的状态</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>讲函数式和一些数学上的定理联系起来还是挺有趣的，比如 <code>SICP</code> 里的那个把求和的过程抽象出来。</p>
+<p>用递归去写写函数也是很有趣的，把自己从命令式的一步步中解放出来。递归有趣在写出来不知道是对不对的，嘛，交给上帝就好了。</p>
+<p>前端业务中的用到的函数式编程说多也不算多。</p>
+<ul>
+<li>比如递归其实用的很少</li>
+<li>那个柯里化的使用场景，其实是我找了很久才找到的（：我很多时候其实也并不能说服自己为什么要这么用呢</li>
+<li>但是处理副作用去封装一些东西还是需要的</li>
+<li>嗯，接着就是 <code>Promise</code> 吧，其实就是 <code>Monad</code> 的一个典型的实践嘛</li>
+<li>React 和 Redux 的一些设计理念，比较贴近函数式的思想吧。</li>
+<li>还有类型推导这些？可以试试 <code>TypeScript</code> 嘛，我也还没正式的去学</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '9d11af6e994f0b0d597e',
+            clientSecret: '530b3741896fee58dda1b816681d944c8aa3500f',
+            repo: 'UZIhuhuhu.github.io',
+            owner: 'UZIhuhuhu',
+            admin: ['UZIhuhuhu'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/05/01/sicp-2/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/04/15/sicp-1/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="tinyhuang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        wynnxin@qingyou.ren
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+  
+  <!-- Paradox Footer Left Section -->
+  <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/UZIhuhuhu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+  <!--Copyright-->
+  <div id="copyright">
+    Copyright&nbsp;©&nbsp;<span year></span>&nbsp;tinyhuang's Blog 
+  </div>
+
+  <!-- Paradox Footer Right Section -->
+
+  <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+  <div class="mdl-mini-footer--right-section">
+    <div>
+      <!-- <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div> -->
+      <!-- <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div> -->
+    </div>
+  </div>
+  
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?XoyRIDdKOG3o0iE537swBg==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

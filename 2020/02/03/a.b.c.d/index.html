@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            a.b.c.d 和 a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;] ，哪个性能更高 | 
+        
+        tinyhuang&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?mHsVh0CeP3Ywb70it0b1+g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="tinyhuang&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://example.com/2020/02/03/a.b.c.d/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="tinyhuang&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://example.com/2020/02/03/a.b.c.d/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="a.b.c.d 和 a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;] ，哪个性能更高 | tinyhuang&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Mon Feb 03 2020 00:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jan 19 2022 20:02:45 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://example.com/2020/02/03/a.b.c.d/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://example.com/2020/02/03/a.b.c.d/index.html",
+    "headline": "a.b.c.d 和 a['b']['c']['d'] ，哪个性能更高",
+    "datePublished": "Mon Feb 03 2020 00:00:00 GMT+0800",
+    "dateModified": "Wed Jan 19 2022 20:02:45 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "tinyhuang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "不成熟的社畜"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "tinyhuang&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="post-toc-text">词法分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-b-c-d"><span class="post-toc-text">a.b.c.d</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-39-b-39-39-c-39-39-d-39"><span class="post-toc-text">a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;]</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%B4%E4%B8%A5%E7%A6%81%E7%9A%84%E8%A7%92%E5%BA%A6%EF%BC%9A%E5%AD%97%E8%8A%82%E7%A0%81"><span class="post-toc-text">更严禁的角度：字节码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%88%86%E6%9E%90%E5%AD%97%E8%8A%82%E7%A0%81"><span class="post-toc-text">分析字节码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CreateObjectLiteral"><span class="post-toc-text">CreateObjectLiteral</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Star-r0"><span class="post-toc-text">Star r0</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LdaNamedProperty-AccumulatorUse-OperandType-OperandType"><span class="post-toc-text">LdaNamedProperty AccumulatorUse, OperandType, OperandType</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                a.b.c.d 和 a['b']['c']['d'] ，哪个性能更高
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>tinyhuang</strong>
+        <span>Feb 03, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=a.b.c.d 和 a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;] ，哪个性能更高&url=http://example.com/2020/02/03/a.b.c.d/index.html&pic=http://example.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=a.b.c.d 和 a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;] ，哪个性能更高&url=http://example.com/2020/02/03/a.b.c.d/index.html&via=tinyhuang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/02/03/a.b.c.d/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://example.com/2020/02/03/a.b.c.d/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>很容易想到的一个方法是通过写一个实例来比较运行时间，通过实例来看，我发现两者差距非常小，可以忽略不计。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">times</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = &#123; <span class="attr">key</span>: &#123;&#125; &#125;;</span><br><span class="line">  <span class="keyword">let</span> temp = a;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; times; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> tmp = temp[<span class="string">&#x27;key&#x27;</span>];</span><br><span class="line">    tmp[<span class="string">&#x27;key&#x27;</span>] = &#123;&#125;;</span><br><span class="line">    temp = tmp;</span><br><span class="line">  &#125;</span><br><span class="line">  temp[<span class="string">&#x27;key&#x27;</span>][<span class="string">&#x27;key&#x27;</span>] = <span class="string">&#x27;surprise&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> d0 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">let</span> i = a;</span><br><span class="line">  <span class="keyword">while</span> (i[<span class="string">&#x27;key&#x27;</span>] !== <span class="string">&#x27;surprise&#x27;</span>) &#123;</span><br><span class="line">    i = i[<span class="string">&#x27;key&#x27;</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;[] time&#x27;</span>, <span class="keyword">new</span> <span class="built_in">Date</span>() - d0);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  <span class="keyword">let</span> ii = a;</span><br><span class="line">  <span class="keyword">while</span> (ii.key !== <span class="string">&#x27;surprise&#x27;</span>) &#123;</span><br><span class="line">    ii = ii.key;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;. time&#x27;</span>, <span class="keyword">new</span> <span class="built_in">Date</span>() - d1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">compare(<span class="number">10000000</span>); <span class="comment">// [] time 62 . time 51</span></span><br><span class="line">compare(<span class="number">10000001</span>); <span class="comment">// [] time 60 . time 62</span></span><br><span class="line">compare(<span class="number">10000002</span>); <span class="comment">// [] time 61 . time 62</span></span><br><span class="line">compare(<span class="number">10000003</span>); <span class="comment">// [] time 62 . time 62</span></span><br></pre></td></tr></table></figure>
+
+<p>于是我希望通过底层来比较下这两者到底有什么区别。</p>
+<p>我想到的第一个办法是将代码转换成 AST，看看结果有什么不同。</p>
+<p>借助于 <code>@babel/parser</code>，并且打开 <code>tokens</code> 选项，可以看到词法分析阶段产生的 token 有什么区别。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;@babel/parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> code1 = <span class="string">`a.b.c.d`</span>;</span><br><span class="line"><span class="keyword">const</span> code2 = <span class="string">`a[&#x27;b&#x27;][&#x27;c&#x27;][&#x27;d&#x27;]`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ast1 = parser.parse(code1, &#123; <span class="attr">tokens</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="keyword">const</span> ast2 = parser.parse(code2, &#123; <span class="attr">tokens</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ast1, ast2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h3><h4 id="a-b-c-d"><a href="#a-b-c-d" class="headerlink" title="a.b.c.d"></a><code>a.b.c.d</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Token: [</span><br><span class="line">  <span class="number">0</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;a&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">1</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;.&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">2</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;b&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">3</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;.&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">4</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;c&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">5</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;.&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">6</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;d&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">7</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;eof&quot;</span>, …&#125; &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="a-39-b-39-39-c-39-39-d-39"><a href="#a-39-b-39-39-c-39-39-d-39" class="headerlink" title="a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;]"></a><code>a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;]</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Token: [</span><br><span class="line">  <span class="number">0</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;a&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">1</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;[&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">2</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;b&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">3</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;]&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">4</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;[&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">5</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;c&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">6</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;]&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">7</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;[&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">8</span>: Token &#123;<span class="attr">type</span>: TokenType, <span class="attr">value</span>: <span class="string">&quot;d&quot;</span>, …&#125;</span><br><span class="line">  <span class="number">9</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;]&quot;</span>, …&#125; &#125;</span><br><span class="line">  <span class="number">10</span>: Token &#123;<span class="attr">type</span>: TokenType &#123;<span class="attr">label</span>: <span class="string">&quot;eof&quot;</span>, …&#125; &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>从词法分析生成的 token 中就可以发现区别所在，<code>[</code> 和 <code>]</code> 可能是个变量，从这点可以猜测出 <code>a.b.c.d</code> 更快。</p>
+<h3 id="更严禁的角度：字节码"><a href="#更严禁的角度：字节码" class="headerlink" title="更严禁的角度：字节码"></a>更严禁的角度：字节码</h3><p>如果仅仅从词法分析阶段生成的 token 去判断，可能还不是很准备，而且这是 Babel 的 parser，并不是 V8 的 parser。</p>
+<p>可以从字节码去比较这两者的差异，结果会更准确些。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cast.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = &#123; <span class="attr">b</span>: &#123; <span class="attr">c</span>: &#123; <span class="attr">d</span>: <span class="number">1</span> &#125; &#125; &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> demo1 = a.b.c.d;</span><br><span class="line">  <span class="keyword">const</span> demo2 = a[<span class="string">&#x27;b&#x27;</span>][<span class="string">&#x27;c&#x27;</span>][<span class="string">&#x27;d&#x27;</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+
+<p>看下这段代码生成的字节码长什么样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --print-bytecode --print-bytecode-filter=test cast.js &gt; bytecode.txt</span><br></pre></td></tr></table></figure>
+
+<p>生成的字节码整体非常长，借助于<code>--print-bytecode-filter</code> 指令可以得到想要的字节码段。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[generated bytecode for function: test]</span><br><span class="line">Parameter count 1</span><br><span class="line">Register count 4</span><br><span class="line">Frame size 32</span><br><span class="line">   13 E&gt; 0x1ed1ce91547e @    0 : a5                StackCheck</span><br><span class="line">   30 S&gt; 0x1ed1ce91547f @    1 : 7d 00 00 08       CreateObjectLiteral [0], [0], #8</span><br><span class="line">         0x1ed1ce915483 @    5 : 26 fb             Star r0</span><br><span class="line">   73 S&gt; 0x1ed1ce915485 @    7 : 28 fb 01 01       LdaNamedProperty r0, [1], [1]</span><br><span class="line">         0x1ed1ce915489 @   11 : 26 f8             Star r3</span><br><span class="line">   75 E&gt; 0x1ed1ce91548b @   13 : 28 f8 02 03       LdaNamedProperty r3, [2], [3]</span><br><span class="line">         0x1ed1ce91548f @   17 : 26 f8             Star r3</span><br><span class="line">   77 E&gt; 0x1ed1ce915491 @   19 : 28 f8 03 05       LdaNamedProperty r3, [3], [5]</span><br><span class="line">         0x1ed1ce915495 @   23 : 26 fa             Star r1</span><br><span class="line">   97 S&gt; 0x1ed1ce915497 @   25 : 28 fb 01 01       LdaNamedProperty r0, [1], [1]</span><br><span class="line">         0x1ed1ce91549b @   29 : 26 f8             Star r3</span><br><span class="line">  102 E&gt; 0x1ed1ce91549d @   31 : 28 f8 02 07       LdaNamedProperty r3, [2], [7]</span><br><span class="line">         0x1ed1ce9154a1 @   35 : 26 f8             Star r3</span><br><span class="line">  107 E&gt; 0x1ed1ce9154a3 @   37 : 28 f8 03 09       LdaNamedProperty r3, [3], [9]</span><br><span class="line">         0x1ed1ce9154a7 @   41 : 26 f9             Star r2</span><br><span class="line">         0x1ed1ce9154a9 @   43 : 0d                LdaUndefined</span><br><span class="line">  114 S&gt; 0x1ed1ce9154aa @   44 : a9                Return</span><br><span class="line">Constant pool (size = 4)</span><br><span class="line">Handler Table (size = 0)</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析字节码"><a href="#分析字节码" class="headerlink" title="分析字节码"></a>分析字节码</h4><blockquote>
+<p>You can think of V8’s <strong>bytecodes as small building blocks</strong> that make up any JavaScript functionality when composed together. V8 has several hundred bytecodes. There are bytecodes for operators like <code>Add</code> or <code>TypeOf</code>, or for property loads like <code>LdaNamedProperty</code>. V8 also has some pretty specific bytecodes like <code>CreateObjectLiteral</code> or <code>SuspendGenerator</code>. The header file <a target="_blank" rel="noopener" href="https://github.com/v8/v8/blob/master/src/interpreter/bytecodes.h">bytecodes.h</a> defines the complete list of V8’s bytecodes.</p>
+</blockquote>
+<p>可以把 V8 的字节码看作是小型的构建块，组合起来就构成了 JS 的功能。</p>
+<p>每个字节码指定其输入和输出作为寄存器操作数。Ignition 使用寄存器 r0，r1，r2，… 和累加器寄存器。</p>
+<h4 id="CreateObjectLiteral"><a href="#CreateObjectLiteral" class="headerlink" title="CreateObjectLiteral"></a>CreateObjectLiteral</h4><p>字面意思：创建对象字面量</p>
+<h4 id="Star-r0"><a href="#Star-r0" class="headerlink" title="Star r0"></a>Star r0</h4><p>将值保存在某个寄存器或累加器中。</p>
+<p>这边的意思：将这个对象字面量保存在 <code>r0</code> 寄存器中</p>
+<h4 id="LdaNamedProperty-AccumulatorUse-OperandType-OperandType"><a href="#LdaNamedProperty-AccumulatorUse-OperandType-OperandType" class="headerlink" title="LdaNamedProperty AccumulatorUse, OperandType, OperandType"></a>LdaNamedProperty AccumulatorUse, OperandType, OperandType</h4><p>可以在<a target="_blank" rel="noopener" href="https://github.com/v8/v8/blob/master/src/interpreter/bytecodes.h"> V8 的头文件</a>中找到 <code>LdaNamedProperty</code> 这个字节码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V(LdaNamedProperty, AccumulatorUse::kWrite, OperandType::kReg, OperandType::kIdx, OperandType::kIdx)</span><br></pre></td></tr></table></figure>
+
+<p><code>LdaNamedProperty r0, [1], [1]</code> 是在内存中查找名字为 1 的值，这里表示 <code>a.b</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LdaNamedProperty r0, [1], [1] // a.b</span><br><span class="line">Star r3</span><br><span class="line">LdaNamedProperty r3, [2], [3] // a.b.c</span><br><span class="line">Star r3</span><br><span class="line">LdaNamedProperty r3, [3], [5] // a.b.c.d</span><br><span class="line">Star r1</span><br></pre></td></tr></table></figure>
+
+<p>那这段就表示 在 a 上查找 <code>a.b.c.d</code> 了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LdaNamedProperty r0, [1], [1] // a[&#x27;b&#x27;]</span><br><span class="line">Star r3</span><br><span class="line">LdaNamedProperty r3, [2], [7] // a[&#x27;b&#x27;][&#x27;c&#x27;]</span><br><span class="line">Star r3</span><br><span class="line">LdaNamedProperty r3, [3], [9] // a[&#x27;b&#x27;][&#x27;c&#x27;][&#x27;d&#x27;]</span><br><span class="line">Star r2</span><br></pre></td></tr></table></figure>
+
+<p>同理这段是表示 <code>a[&#39;b&#39;][&#39;c&#39;][&#39;d&#39;]</code>。</p>
+<p>从字节码上可以看到这两种查找方式几乎没有任何区别。</p>
+<p>简单地分析一下原因：V8 使用 HiddenClasses 来追踪对象模型；这里比较的是 JS 的上层查找方式，在 V8 中确实有不同的方式进行属性查找，这个例子中是一开始创建了对象字面量，后续并没有动态添加属性，所以两者都是使用 fast 模式进行查找。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '9d11af6e994f0b0d597e',
+            clientSecret: '530b3741896fee58dda1b816681d944c8aa3500f',
+            repo: 'UZIhuhuhu.github.io',
+            owner: 'UZIhuhuhu',
+            admin: ['UZIhuhuhu'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/01/20/react-fiber/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="tinyhuang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        wynnxin@qingyou.ren
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+  
+  <!-- Paradox Footer Left Section -->
+  <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/UZIhuhuhu" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+  <!--Copyright-->
+  <div id="copyright">
+    Copyright&nbsp;©&nbsp;<span year></span>&nbsp;tinyhuang's Blog 
+  </div>
+
+  <!-- Paradox Footer Right Section -->
+
+  <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+  <div class="mdl-mini-footer--right-section">
+    <div>
+      <!-- <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div> -->
+      <!-- <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div> -->
+    </div>
+  </div>
+  
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?XoyRIDdKOG3o0iE537swBg==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
